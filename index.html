@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Carbon Footprint Calculator: AI Impact, Risks and Environmental Cost</title>
+    <meta
+      name="description"
+      content="Estimate AI carbon footprint, electricity use and heat release. Understand AI environmental impact with real-world comparisons and global data center headlines."
+    />
+    <meta
+      name="keywords"
+      content="AI carbon footprint, AI impact on environment, AI cons, AI emissions, data center climate impact, AI energy consumption, AI global warming"
+    />
+    <meta name="author" content="Niharika Argade" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href="https://example.com/ai-carbon-footprint-calculator" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AI Carbon Footprint Calculator: AI Impact and Environmental Cost" />
+    <meta
+      property="og:description"
+      content="See how AI usage scales into electricity demand, heat release, and CO2e impact."
+    />
+    <meta property="og:url" content="https://example.com/ai-carbon-footprint-calculator" />
+    <meta property="og:image" content="https://example.com/ai-impact-cover.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="AI Carbon Footprint Calculator: AI Impact and Environmental Cost"
+    />
+    <meta
+      name="twitter:description"
+      content="Estimate AI carbon footprint and understand real environmental impact."
+    />
+    <meta name="twitter:image" content="https://example.com/ai-impact-cover.jpg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Carbon Footprint Calculator",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Web",
+        "description": "Calculator to estimate AI electricity use, heat release, and carbon footprint with real-world impact comparisons.",
+        "url": "https://example.com/ai-carbon-footprint-calculator",
+        "author": {
+          "@type": "Person",
+          "name": "Niharika Argade"
+        }
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is AI carbon footprint?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI carbon footprint is the greenhouse gas emissions associated with electricity used by AI training and inference workloads."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does AI impact global warming?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI systems increase electricity demand in data centers, and that electricity can translate into CO2 emissions depending on the grid mix."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these results exact measurements?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. The calculator provides directional estimates based on published research and equivalency factors."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div class="sky"></div>
+    <div class="haze"></div>
+
+    <main class="wrap">
+      <section class="hero reveal">
+        <p class="tag">Environment First</p>
+        <h1>AI feels weightless. Its carbon footprint is not.</h1>
+        <p class="sub">
+          Track how routine AI usage scales into electricity demand, heat release, and CO2e from
+          one day to one year.
+        </p>
+        <div class="hero-chips">
+          <span class="chip">Electricity (kWh)</span>
+          <span class="chip">Heat (MJ)</span>
+          <span class="chip">Emissions (CO2e)</span>
+        </div>
+        <p class="hero-note">
+          Small individual actions look tiny. Aggregate usage across teams and products is where
+          impact grows fast.
+        </p>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Scenario setup</h2>
+        <div class="controls">
+          <label>
+            Daily AI requests: <strong id="requestsLabel">500</strong>
+            <input id="requests" type="range" min="1" max="50000" value="500" step="1" />
+          </label>
+          <label>
+            Average total tokens per request: <strong id="tokensLabel">600</strong>
+            <input id="tokens" type="range" min="50" max="8000" value="600" step="10" />
+          </label>
+          <label>
+            Model efficiency tier
+            <select id="tier"></select>
+          </label>
+        </div>
+        <div class="controls">
+          <label>
+            AI images generated per day: <strong id="imagesLabel">20</strong>
+            <input id="imagesPerDay" type="range" min="0" max="1000" value="20" step="1" />
+          </label>
+          <label>
+            AI videos generated per day (10s clips): <strong id="videosLabel">2</strong>
+            <input id="videosPerDay" type="range" min="0" max="200" value="2" step="1" />
+          </label>
+          <label>
+            Video energy estimate per 10s clip (Wh): <strong id="videoWhLabel">50</strong>
+            <input id="videoWhPerClip" type="range" min="10" max="300" value="50" step="5" />
+          </label>
+        </div>
+        <p class="small">
+          Image and video generation are often significantly more energy-intensive than text-only
+          requests.
+        </p>
+      </section>
+
+      <section class="timeline reveal">
+        <article class="time-card">
+          <h3>Today</h3>
+          <p class="big"><span id="todayCo2">0</span> kg CO2e</p>
+          <p><span id="todayKwh">0</span> kWh electricity</p>
+          <p><span id="todayHeat">0</span> MJ heat released</p>
+        </article>
+        <article class="time-card">
+          <h3>30 Days</h3>
+          <p class="big"><span id="monthCo2">0</span> kg CO2e</p>
+          <p><span id="monthKwh">0</span> kWh electricity</p>
+          <p><span id="monthHeat">0</span> MJ heat released</p>
+        </article>
+        <article class="time-card alert">
+          <h3>365 Days</h3>
+          <p class="big"><span id="yearCo2">0</span> kg CO2e</p>
+          <p><span id="yearKwh">0</span> kWh electricity</p>
+          <p><span id="yearHeat">0</span> MJ heat released</p>
+        </article>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Equivalent impact (annual)</h2>
+        <p class="small">Animated impact board showing what your annual AI usage can equal.</p>
+        <div class="comparisons" id="comparisonGrid"></div>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Why this is serious</h2>
+        <div class="severity-wrap">
+          <div class="severity-meter">
+            <span id="severityFill"></span>
+          </div>
+          <p id="severityText" class="stress">Impact level: low</p>
+        </div>
+        <ul id="impactBullets" class="impact-list"></ul>
+      </section>
+
+      <section class="panel reveal">
+        <h2>Global headlines on AI and data center impact</h2>
+        <p class="small">
+          Real reporting from different regions showing pressure on electricity grids, water, and
+          local policy decisions.
+        </p>
+        <div id="headlineGrid" class="headline-grid"></div>
+      </section>
+
+      <section class="sources reveal">
+        <h2>Method and data</h2>
+        <ul>
+          <li>
+            AI electricity baseline reference: Luccioni et al. (2024),
+            <a href="https://arxiv.org/abs/2311.16863" target="_blank" rel="noreferrer"
+              >Power Hungry Processing</a
+            >.
+          </li>
+          <li>Image default uses 2.907 Wh per image (derived from study task baseline).</li>
+          <li>Video default is a configurable estimate per 10-second generated clip.</li>
+          <li>Grid carbon intensity conversion: 297.6 gCO2e/kWh (same study setup).</li>
+          <li>
+            Equivalency references: U.S. EPA
+            <a
+              href="https://www.epa.gov/energy/greenhouse-gases-equivalencies-calculator-calculations-and-references"
+              target="_blank"
+              rel="noreferrer"
+              >Greenhouse Gas Equivalencies</a
+            >.
+          </li>
+          <li>All results are directional estimates, not exact measured emissions.</li>
+        </ul>
+      </section>
+
+      <section class="panel reveal faq">
+        <h2>FAQ: AI impact and carbon footprint</h2>
+        <h3>What is AI carbon footprint?</h3>
+        <p>
+          AI carbon footprint refers to emissions caused by electricity consumption in AI workloads,
+          including inference in data centers.
+        </p>
+        <h3>Can AI increase global warming risk?</h3>
+        <p>
+          Yes, especially at scale. Large and frequent AI usage can raise data center electricity
+          demand, and that can increase emissions where grids are still carbon intensive.
+        </p>
+        <h3>Why does this calculator matter?</h3>
+        <p>
+          It helps translate abstract AI energy use into understandable real-world equivalents so
+          users can make lower-impact technology choices.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Copyright © 2026 Niharika Argade
+      </p>
+      <a
+        href="https://buymeacoffee.com/niharikaara"
+        target="_blank"
+        rel="noreferrer"
+        class="bmc-link"
+        aria-label="Buy me a coffee"
+      >
+        <img
+          src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+          alt="Buy Me A Coffee"
+          class="bmc-badge"
+        />
+      </a>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

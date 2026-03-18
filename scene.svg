@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" role="img" aria-label="Natural scene with trees and animals">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#c9f3d5"/>
+      <stop offset="100%" stop-color="#edfdf2"/>
+    </linearGradient>
+    <linearGradient id="hill1" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#7fc88f"/>
+      <stop offset="100%" stop-color="#5db174"/>
+    </linearGradient>
+    <linearGradient id="hill2" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#5ea96f"/>
+      <stop offset="100%" stop-color="#4a8f5f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="420" fill="url(#sky)"/>
+  <circle cx="980" cy="85" r="46" fill="#fff5b4"/>
+
+  <path d="M0 285 C150 235 300 250 420 278 C560 312 700 305 860 265 C960 240 1080 248 1200 282 L1200 420 L0 420 Z" fill="url(#hill1)"/>
+  <path d="M0 330 C170 295 295 322 430 350 C560 378 708 374 840 345 C970 318 1090 327 1200 355 L1200 420 L0 420 Z" fill="url(#hill2)"/>
+
+  <g fill="#2c6c43">
+    <rect x="110" y="215" width="8" height="35"/>
+    <circle cx="114" cy="207" r="18"/>
+    <rect x="180" y="205" width="8" height="40"/>
+    <circle cx="184" cy="194" r="19"/>
+    <rect x="260" y="220" width="8" height="34"/>
+    <circle cx="264" cy="211" r="17"/>
+    <rect x="410" y="205" width="8" height="44"/>
+    <circle cx="414" cy="191" r="21"/>
+    <rect x="570" y="210" width="8" height="42"/>
+    <circle cx="574" cy="198" r="20"/>
+    <rect x="735" y="212" width="8" height="37"/>
+    <circle cx="739" cy="201" r="18"/>
+    <rect x="910" y="207" width="8" height="41"/>
+    <circle cx="914" cy="194" r="20"/>
+    <rect x="1045" y="214" width="8" height="36"/>
+    <circle cx="1049" cy="204" r="18"/>
+  </g>
+
+  <g fill="#7e5f3d">
+    <ellipse cx="680" cy="305" rx="38" ry="17"/>
+    <ellipse cx="715" cy="299" rx="11" ry="10"/>
+    <rect x="660" y="316" width="6" height="22"/>
+    <rect x="676" y="316" width="6" height="22"/>
+    <rect x="694" y="316" width="6" height="22"/>
+    <rect x="710" y="314" width="6" height="24"/>
+    <path d="M642 303 Q628 292 635 281 Q646 285 651 294" />
+  </g>
+
+  <g fill="#9a7a54">
+    <ellipse cx="480" cy="333" rx="22" ry="13"/>
+    <ellipse cx="500" cy="328" rx="8" ry="8"/>
+    <rect x="468" y="343" width="4" height="15"/>
+    <rect x="479" y="343" width="4" height="15"/>
+    <rect x="490" y="342" width="4" height="16"/>
+    <rect x="501" y="341" width="4" height="17"/>
+    <circle cx="503" cy="322" r="2" fill="#2a2a2a"/>
+  </g>
+
+  <g fill="#385f4b">
+    <path d="M268 110 q18 9 36 0 q-18 20 -36 0z"/>
+    <path d="M328 90 q17 8 33 0 q-16 18 -33 0z"/>
+    <path d="M878 120 q18 9 36 0 q-18 20 -36 0z"/>
+  </g>
+</svg>
